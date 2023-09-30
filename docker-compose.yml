@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  best_python_docker:
+    image: best_python_docker
+    container_name: best_python_docker
+    hostname: bpd
+    restart: unless-stopped
+    ports:
+        - "1234:8000"
