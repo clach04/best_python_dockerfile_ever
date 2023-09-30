@@ -16,3 +16,6 @@ services:
     cap_drop:
       - ALL
     read_only: true
+    # Uncomment if need temporary files
+    #tmpfs:
+    #  - /tmp
