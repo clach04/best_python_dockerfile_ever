@@ -9,6 +9,12 @@ Invoking [Cunningham's Law](https://meta.wikimedia.org/wiki/Cunningham%27s_Law),
 
 ## Running
 
+Docker Compose:
+
+    echo Open http://localhost:1234/
+    docker compose up
+    #docker-compose up
+
 Plain docker run:
 
     echo Open http://localhost:1234/
