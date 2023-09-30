@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   best_python_docker:
@@ -19,3 +19,15 @@ services:
     # Uncomment if need temporary files
     #tmpfs:
     #  - /tmp
+
+    # Limit the container
+    # always has quarter of a CPU available but no more than half
+    # will have 20Mb memory but constrained to 200Mb
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 200M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
