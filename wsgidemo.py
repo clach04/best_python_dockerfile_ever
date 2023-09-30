@@ -5,12 +5,12 @@
 """
 
 try:
-    # py2
-    from cgi import escape as escape_html
-except ImportError:
     # Python 3.8 and later
     # py3
     from html import escape as escape_html
+except ImportError:
+    # py2
+    from cgi import escape as escape_html
 
 import os
 import sys
