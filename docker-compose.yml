@@ -6,5 +6,8 @@ services:
     container_name: best_python_docker
     hostname: bpd
     restart: unless-stopped
+    #environment:
+      #- PORT=1235
     ports:
-        - "1234:8000"
+      - "1234:8000"
+      #- "1235:1235"
