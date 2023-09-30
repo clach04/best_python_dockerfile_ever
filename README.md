@@ -37,6 +37,9 @@ Useful commands:
     # show layer sizes
     docker history best_python_docker
 
+    # Connect to running container with an iteractive shell
+    docker exec -it best_python_docker /bin/sh
+
 ## TODO
 
   * docker scout quickview
