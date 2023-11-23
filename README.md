@@ -50,3 +50,6 @@ Useful commands:
       * external packages to show best practices
   * TODO items in Dockfile
   * None root user
+  * read only image
+  * secrets
+  * timezone (mount host and TZ env var)
