@@ -16,7 +16,9 @@ FROM python:3.11-slim
 # no other dependencies, so no pip
 # TODO consider alternative python web/wsgi server
 
-ADD wsgidemo.py .
+# COPY instead of ADD for files and folders
+# Only use ADD for tarballs/zips
+COPY wsgidemo.py .
 # TODO chmod a+x wsgidemo.py
 # may need dos2unix
 
