@@ -42,7 +42,8 @@ Useful commands:
 
 ## TODO
 
-  * docker scout quickview
+  * docker scout quickview, etc. scanners
+      * linters
   * https://github.com/clach04/best_python_dockerfile_ever/issues/1
   * Python script update
       * dump current time/date
