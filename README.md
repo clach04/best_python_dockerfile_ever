@@ -49,7 +49,10 @@ Useful commands:
       * alternative WSGI server
       * external packages to show best practices
   * TODO items in Dockfile
-  * None root user
+  * Non-root user
   * read only image
   * secrets
+  * PORT control
+  * .env and env file https://stackoverflow.com/questions/52664673/how-to-get-port-of-docker-compose-from-env-file
   * timezone (mount host and TZ env var)
+  * DEBUG options
