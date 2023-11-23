@@ -54,5 +54,6 @@ Useful commands:
   * secrets
   * PORT control
   * .env and env file https://stackoverflow.com/questions/52664673/how-to-get-port-of-docker-compose-from-env-file
+  * https://docs.docker.com/compose/compose-file/compose-file-v2/#healthcheck
   * timezone (mount host and TZ env var)
   * DEBUG options
