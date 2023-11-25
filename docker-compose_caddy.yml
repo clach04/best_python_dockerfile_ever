@@ -2,7 +2,7 @@
 #   docker compose -f docker-compose_caddy.yml up
 #   docker-compose -f docker-compose_caddy.yml up
 #
-# Note explict dependency below on Caddyfile
+# Note explicit dependency below on Caddyfile
 
 version: '3.3'
 
