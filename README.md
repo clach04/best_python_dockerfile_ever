@@ -1,6 +1,6 @@
 # The best Python Dockerfile ever
 
-Invoking [Cunningham's Law](https://meta.wikimedia.org/wiki/Cunningham%27s_Law), this is the best Dockerfile for a hello world Python web app, in other words https://xkcd.com/386/ ;-)
+Invoking [Cunningham's Law](https://meta.wikimedia.org/wiki/Cunningham%27s_Law), [this](https://github.com/clach04/best_python_dockerfile_ever) is the best Dockerfile for a hello world Python web app, in other words https://xkcd.com/386/ ;-)
 
 
 ## Build
@@ -12,14 +12,20 @@ Invoking [Cunningham's Law](https://meta.wikimedia.org/wiki/Cunningham%27s_Law),
 Docker Compose:
 
     echo Open http://localhost:1234/
-    docker compose up
+    docker  compose up
     #docker-compose up
 
-Plain docker run:
+Plain docker (no compose) run:
 
     echo Open http://localhost:1234/
     #docker run -p 8000:8000 --name best_python_docker --hostname bpd --restart=unless-stopped best_python_docker
-    docker run -p 1234:8000 --name best_python_docker --hostname bpd --restart=unless-stopped best_python_docker
+    docker  run -p 1234:8000 --name best_python_docker --hostname bpd --restart=unless-stopped best_python_docker
+
+Running on a public machine with https and LetsEncrypt generated certificates using Caddy
+
+    docker  compose -f docker-compose_caddy.yml up
+    #docker-compose -f docker-compose_caddy.yml up
+
 
 ## Notes
 
