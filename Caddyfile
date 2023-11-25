@@ -1,0 +1,46 @@
+# requires port 80 to be open
+# NOTE dependency with docker-compose_caddy.yml
+#
+#   docker compose -f docker-compose_caddy.yml up
+#   docker-compose -f docker-compose_caddy.yml up
+#
+
+# expected to work
+# https://noauth.your_domain.net:2000/
+# https://Bob:hiccup@withauth.your_domain.net:2000/
+#
+# NOT expected to work
+# http://test.your_domain.net:1234/
+# http://noauth.your_domain.net:8000/
+
+# password hash is bcrypt
+#  https://caddyserver.com/docs/caddyfile/directives/basicauth
+#  https://caddyserver.com/docs/command-line#caddy-hash-password
+#       caddy hash-password
+#       docker run -it --entrypoint /usr/bin/caddy caddy  hash-password
+#
+
+https://withauth.your_domain.net:2000 {
+    # from https://caddyserver.com/docs/caddyfile/directives/basicauth
+    # Protect all resources in from root dir / so only Bob can access them with the password "hiccup"
+    basicauth /* {
+        Bob $2a$14$Zkx19XLiW6VYouLHR5NmfOFU0z2GTNmpkT/5qqR7hx4IjWJPDhjvG
+    }
+
+  # Set the port to the one you are using in the http web server
+  # Websocket support, proxy headers, etc. are enabled by default
+  # use Docker network hostname
+  # host.docker.internal does not work
+  reverse_proxy bpd:8000
+  #reverse_proxy bpd:1234
+}
+
+https://noauth.your_domain.net:2000 {
+  # Set the port to the one you are using in the http web server
+  # Websocket support, proxy headers, etc. are enabled by default
+  # use Docker network hostname
+  # host.docker.internal does not work
+  reverse_proxy bpd:8000
+  #reverse_proxy bpd:1234
+}
+

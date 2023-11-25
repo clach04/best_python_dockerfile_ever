@@ -29,6 +29,17 @@ def cutoff(s, n=100):
 # environment dictionary after being updated by setup_testing_defaults
 def simple_app(environ, start_response):
     #RemotePdb('127.0.0.1', 4444).set_trace()
+
+    # Useful header entries
+    # HTTP_HOST
+    #
+    # Useful (Caddy) forwarding header entries
+    # HTTP_X_FORWARDED_HOST
+    # HTTP_X_FORWARDED_PROTO
+    # HTTP_X_FORWARDED_FOR  (client IP address)
+    # TODO? Authenticated user name?
+    #
+
     setup_testing_defaults(environ)
 
     status = '200 OK'

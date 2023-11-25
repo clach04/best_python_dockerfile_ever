@@ -1,0 +1,49 @@
+#
+#   docker compose -f docker-compose_caddy.yml up
+#   docker-compose -f docker-compose_caddy.yml up
+#
+# Note explict dependency below on Caddyfile
+
+version: '3.3'
+
+# based on:
+#       * https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04
+#       * https://arjunphp.com/windows-server-docker-compose-caddy-server-reverse-proxy/
+#       * https://github.com/lucaslorentz/caddy-docker-proxy - not actually used
+
+services:
+  pydemo:
+    image: best_python_docker
+    restart: unless-stopped
+    hostname: bpd
+    # https://www.baeldung.com/ops/docker-compose-expose-vs-ports
+    # expose makes available to virtual network BUT not externally, ports will make available which is NOT wanted (only reverse proxy should use)
+    expose:
+      #- 1234
+      - 8000
+    networks:
+      - app_net
+
+  # reverse proxy server
+  # https://hub.docker.com/_/caddy
+  caddy:
+    image: caddy
+    restart: unless-stopped
+    hostname: caddy
+    networks:
+      - app_net
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/data:/data
+    # NOTE only Caddy should be using ports, all others should use expose instead
+    ports:
+      # NOTE 80 and 443 were needed to get cert. once had cert not needed - looks like http (80) was needed unclear about https (443)
+      - "80:80"
+      - "443:443"
+      #- "1234:1234"
+      - "2000:2000"
+
+
+networks:
+  app_net:
+    external: false
