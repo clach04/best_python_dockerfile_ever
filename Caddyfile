@@ -43,4 +43,3 @@ https://noauth.your_domain.net:2000 {
   reverse_proxy bpd:8000
   #reverse_proxy bpd:1234
 }
-

@@ -23,6 +23,8 @@ Plain docker (no compose) run:
 
 Running on a public machine with https and LetsEncrypt generated certificates using Caddy
 
+    echo Open https://noauth.host_from_caddy_file:2000/
+    echo Open https://Bob:hiccup@withauth.host_from_caddy_file:2000/
     docker  compose -f docker-compose_caddy.yml up
     #docker-compose -f docker-compose_caddy.yml up
 
