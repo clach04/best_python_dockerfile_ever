@@ -1,2 +1,9 @@
+# https://shisho.dev/blog/posts/how-to-use-dockerignore/
+# https://codefresh.io/blog/not-ignore-dockerignore-2
+
 # If using Caddyfile to get certs
 data
+
+docker-compose*.yml
+
+.git
