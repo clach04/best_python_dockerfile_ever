@@ -7,3 +7,6 @@ data
 docker-compose*.yml
 
 .git
+
+**/*.py[cod]
+**/__pycache__/
