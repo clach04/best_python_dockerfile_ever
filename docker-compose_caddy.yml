@@ -33,7 +33,7 @@ services:
     networks:
       - app_net
     volumes:
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile:ro
       - $PWD/data:/data
     # NOTE only Caddy should be using ports, all others should use expose instead
     ports:
