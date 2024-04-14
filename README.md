@@ -56,6 +56,7 @@ Useful commands:
   * Python script update
       * dump current time/date
       * alternative WSGI server
+          * https://github.com/pallets/werkzeug
       * external packages to show best practices
   * TODO items in Dockfile
   * Non-root user
