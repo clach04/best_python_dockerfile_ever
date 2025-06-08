@@ -52,7 +52,7 @@ Useful commands:
 
   * docker scout quickview, etc. scanners
       * linters
-  * https://github.com/clach04/best_python_dockerfile_ever/issues/1
+  * https://github.com/clach04/best_python_dockerfile_ever/issues/
   * Python script update
       * dump current time/date
       * alternative WSGI server
